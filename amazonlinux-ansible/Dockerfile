@@ -1,4 +1,4 @@
-FROM n0ts/centos-python
+FROM n0ts/amazonlinux-python
 
 MAINTAINER Naoya Nakazawa <naoya.n@gmail.com>
 
