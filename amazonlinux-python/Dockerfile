@@ -4,8 +4,8 @@ MAINTAINER Naoya Nakazawa <naoya.n@gmail.com>
 
 RUN \
   yum install -y python-pip python-devel python-virtualenv \
-  && pip install --upgrade pip \
+  && pip-2.6 install --upgrade pip \
   && python --version \
-  && pip --version
+  && pip-2.6 --version
 
 CMD ["/bin/bash"]
