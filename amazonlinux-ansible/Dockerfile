@@ -6,9 +6,14 @@ ENV user ec2-user
 ENV group ec2-user
 
 RUN \
-    yum install -y python2-boto python2-boto3 python-passlib openssl-devel ansible \
+    yum install -y python2-boto python2-boto3 python-passlib openssl-devel \
     && pip install ansible-lint \
     && pip install --upgrade ansible \
+
+    && mkdir /etc/ansible \
+    && wget -N \
+        https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg \
+        -P /etc/ansible \
 
     # install human_log callback plugin
     # https://github.com/n0ts/ansible-human_log/
