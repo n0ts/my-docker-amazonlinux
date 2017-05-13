@@ -12,7 +12,7 @@ RUN \
     && yum upgrade -y \
     && yum groupinstall -y "Development Tools" \
     && yum install -y bash-completion \
-                      curl emacs git \
+                      curl emacs git initscripts \
                       less the_silver_searcher \
                       sudo tree unzip vim wget zsh \
 
