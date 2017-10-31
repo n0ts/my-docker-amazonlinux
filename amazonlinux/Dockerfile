@@ -14,6 +14,7 @@ RUN \
     && yum install -y aws-cli \
                       bash-completion \
                       curl emacs git initscripts \
+                      jq \
                       less the_silver_searcher \
                       sudo tree unzip vim wget zsh \
 
