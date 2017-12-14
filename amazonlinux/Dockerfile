@@ -1,4 +1,4 @@
-FROM amazonlinux:2
+FROM amazonlinux:latest
 
 MAINTAINER Naoya Nakazawa <naoya.n@gmail.com>
 
@@ -6,8 +6,8 @@ ENV user ec2-user
 ENV group ec2-user
 ENV work /work
 
-RUN \
-    yum clean all \
+RUN set -x \
+    && yum clean all \
     && yum install -y epel-release \
     && yum upgrade -y \
     && yum groupinstall -y "Development Tools" \
