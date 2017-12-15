@@ -8,7 +8,10 @@ ENV work /work
 
 RUN set -x \
     && yum clean all \
-    && yum install -y epel-release \
+    && yum install -y wget \
+    && wget -r --no-parent -A 'epel-release-*.rpm' http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/ \
+    && rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-*.rpm \
+    && rm -fr dl.fedoraproject.org/ \
     && yum upgrade -y \
     && yum groupinstall -y "Development Tools" \
     && yum install -y aws-cli \
@@ -16,7 +19,7 @@ RUN set -x \
                       curl emacs git initscripts \
                       jq \
                       less the_silver_searcher \
-                      sudo tree unzip vim wget zsh \
+                      sudo tree unzip vim zsh \
 
     # add local user
     && groupadd ${user} \
